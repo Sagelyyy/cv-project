@@ -11,7 +11,7 @@ class General extends React.Component{
         }
     }
 
-    handleInput(event){
+    handleInput = (event) => {
         const {name, value} = event.target
         this.setState({[name]: value})
         console.log(this.state)
@@ -21,11 +21,12 @@ class General extends React.Component{
     render() {
         return (
             <div className="general--container">
-                <form>
-                    <input onChange={this.handleInput} name="firstName" placeholder="First Name" type='text'></input>
-                    <input onChange={this.handleInput} name="lastName" placeholder="Last Name" type='text'></input>
-                    <input onChange={this.handleInput} name="email" placeholder="email@address.com" type='email'></input>
-                    <input onChange={this.handleInput} name="phone" placeholder="Phone Number" type='number'></input>
+                <form className="general--form">
+                    <input className="general--input" onChange={this.handleInput} value={this.state.firstName} name="firstName" placeholder="First Name" type='text'></input>
+                    <input className="general--input" onChange={this.handleInput} value={this.state.lastName} name="lastName" placeholder="Last Name" type='text'></input>
+                    <input className="general--input" onChange={this.handleInput} value={this.state.email} name="email" placeholder="email@address.com" type='email'></input>
+                    <input className="general--input" onChange={this.handleInput} value={this.state.phone} name="phone" placeholder="Phone Number" type='number'></input>
+                    <button className="general--button">Submit</button>
                 </form>
             </div>
         )
