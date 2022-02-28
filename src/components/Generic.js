@@ -38,7 +38,7 @@ class Generic extends React.Component {
             //valid phone text not working for some reason.
             return (
                 <div>
-                    <p className="generic--date--desc">{this.props.validPhone ? ' ' : 'Please enter a valid phone number.'}</p>
+                    <p className="generic--phone--desc">{this.props.validPhone ? ' ' : 'You must enter a valid phone number'}</p>
                     <input className="generic--input"
                         onChange={this.props.handlePhone}
                         type={elem}

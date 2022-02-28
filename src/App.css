@@ -1,5 +1,7 @@
 body{
   background-color: #1F1F26;
+  color: white;
+  font-family: 'Inter';
 }
 
 .App{
@@ -50,6 +52,13 @@ body{
   margin: 0;
 }
 
+.generic--phone--desc{
+  font-size: 15px;
+  font-family: 'Inter';
+  font-weight: 400;
+  margin: 0;
+}
+
 .generic--button{
   width: 250px;
   margin-bottom: 10px;
@@ -72,4 +81,34 @@ body{
   text-align: center;
   margin-right: 20%;
   margin-top: 40px;
+}
+
+.composed--title--avatar--container{
+  display: flex;
+  flex-direction: row;
+}
+
+.composed--avatar{
+  align-self: center;
+  width: 120px;
+  height: 120px;
+  border: 3px solid #4369D9;
+  border-radius: 20px;
+}
+
+.composed--general--container{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  line-height: 0.2;
+  text-align: left;
+  height: 200px;
+}
+
+.composed--education{
+  height: 200px;
+}
+
+.compost--experience{
+height: 200px;
 }
