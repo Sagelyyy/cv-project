@@ -66,7 +66,7 @@ class App extends React.Component {
             inputs={['text', 'text', 'date']}
             placeholder={['Schoo Name', 'Degree', ' ']}
             names={['school', 'studyTitle', 'studyDate']}
-            dateTitle={[null,null,'Year']}
+            dateTitle={[null,null,'Year Graduated']}
           />
           <Generic
             //Practical Experience

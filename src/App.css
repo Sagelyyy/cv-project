@@ -24,6 +24,7 @@ body{
   display: flex;
   align-items: center;
   border-radius: 20px;
+  box-shadow: 10px 10px 20px #0c0b14;
 }
 
 .generic--title{
@@ -81,6 +82,8 @@ body{
   text-align: center;
   margin-right: 20%;
   margin-top: 40px;
+  box-shadow: 20px 20px 20px #0c0b14;
+  height: 78.5vh;
 }
 
 .composed--title--avatar--container{
@@ -89,12 +92,12 @@ body{
 }
 
 .composed--general--title--container{
-  background-color: pink;
   width: 100%;
 }
 
-.composed--general--title{
+.composed--general--title, .composed--edu--title, .composed--exp--title{
   font-size: 30px;
+  color: #6b68bb;
 }
 
 .composed--avatar{
@@ -115,10 +118,23 @@ body{
   margin-left: 5px;
 }
 
+.composed--edu--date--title, .composed--edu--school--title, .composed--edu--degree--title,
+.composed--exp--company--title, .composed--exp--title--title, .composed--exp--tasks--title,
+.composed--exp--startend--title
+{ color: #8ca0da;}
+
 .composed--education{
   height: 200px;
+  width: 200px;
+  text-align: left;
+  margin-left: 130px;
+  line-height: 0.4;
 }
 
-.compost--experience{
+.composed--experience{
   height: 200px;
+  width: 200px;
+  text-align: left;
+  margin-left: 130px;
+  line-height: 0.4;
 }
