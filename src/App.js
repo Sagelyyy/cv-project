@@ -3,9 +3,6 @@ import './App.css';
 import Generic from './components/Generic';
 import Composed from './components/Composed';
 
-//maybe we should move the state to the app instead of having each component control its own state?
-
-
 class App extends React.Component {
   constructor(props) {
     super(props)

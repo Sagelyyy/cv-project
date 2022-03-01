@@ -13,7 +13,9 @@ class Composed extends React.Component {
                     <div className="composed--title--avatar--container">
                         <img src={blankProfile} className="composed--avatar" />
                         <div className="composed--general--container">
-                            <h1>Personal Information</h1>
+                            <div className="composed--general--title--container">
+                            <h1 className="composed--general--title">Personal Information</h1>
+                            </div>
                         <h1 className="composed--title">{this.props.firstName} {this.props.lastName}</h1>
                         <h2>{this.props.email}</h2>
                         <h3>{this.props.phone ? this.props.phone : ' '}</h3>
