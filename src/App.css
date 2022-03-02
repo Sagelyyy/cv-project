@@ -83,7 +83,7 @@ body{
   margin-right: 20%;
   margin-top: 40px;
   box-shadow: 20px 20px 20px #0c0b14;
-  height: 78.5vh;
+  
 }
 
 .composed--title--avatar--container{
@@ -132,7 +132,7 @@ body{
 }
 
 .composed--experience{
-  height: 200px;
+  height: 300px;
   width: 200px;
   text-align: left;
   margin-left: 130px;

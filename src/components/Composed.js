@@ -11,7 +11,7 @@ class Composed extends React.Component {
             <div className="composed--container">
                 <div className="composed--general">
                     <div className="composed--title--avatar--container">
-                        <img src={blankProfile} className="composed--avatar" />
+                        <img alt="avatar" src={blankProfile} className="composed--avatar" />
                         <div className="composed--general--container">
                             <div className="composed--general--title--container">
                             <h1 className="composed--general--title">Personal Information</h1>
