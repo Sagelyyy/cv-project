@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Generic from './components/Generic';
 import Composed from './components/Composed';
+import Personal from './components/Personal';
 
 class App extends React.Component {
   constructor(props) {
@@ -19,7 +20,8 @@ class App extends React.Component {
       position: '',
       jobTasks: '',
       jobStart: '',
-      jobEnd: ''
+      jobEnd: '',
+      editMode: true
     }
   }
 
@@ -30,23 +32,41 @@ class App extends React.Component {
   }
 
   handlePhone = (event) => {
-    const {name, value} = event.target
+    const { name, value } = event.target
     const regex = new RegExp(/^([+]?\d{1,2}[-\s]?|)\d{3}[-\s]?\d{3}[-\s]?\d{4}$/)
-    if(regex.test(value)){
+    if (regex.test(value)) {
       this.setState({ [name]: value })
-      this.setState({validPhone: true})
-    }else{
-      this.setState({validPhone: false})
+      this.setState(old => { return { ...old, validPhone: true } })
+    } else {
+      this.setState(old => { return { ...old, validPhone: false } })
     }
   }
 
-  
+  handleEdit = (event) => {
+    this.setState(old => {
+      return {
+        ...old,
+        editMode: !old.editMode
+      }
+    })
+    console.log(this.state.editMode)
+    console.log(this.state)
+  }
 
   render() {
 
     return (
       <div className="App">
- 
+        <Personal 
+        editMode={this.state.editMode}
+        onChange={this.handleInput}
+        firstName={this.state.firstName}
+        lastName={this.state.lastName}
+        phone={this.state.phone}
+        email={this.state.email}
+        onClick={this.handleEdit}
+        
+        />
       </div>
     )
   }
