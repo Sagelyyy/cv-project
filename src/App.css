@@ -1,18 +1,92 @@
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
 body{
     background-color: #637988;
+    font-family: 'Inter';
+    font-weight: 400;
+}
+h4{
+  margin: 0;
 }
 
 .App{
     margin: 0;
 }
 
-.general--container{
+hr{
+  width: 100%;
+  border: 1px solid #2f5b79;
+}
+
+.personal--container, .general--container,
+.education--container, .experience--container{
     font-family: 'Inter';
     font-weight: 400;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    text-align: left;
     width: 400px;
+    padding: 5px;
+}
+
+.personal--title{
+  width: 50%;
+}
+
+.personal--container, .education--container, .experience--container{
+  margin-top: 10vh;
+  background-color: #97bad1;
+  border-radius: 15px;
+  box-shadow: 8px 10px 30px black;
+}
+
+.personal--button, .education--button, .experience--button{
+  width: 10%;
+  align-self: flex-end;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid #2f5b79;
+  cursor: pointer;
+}
+
+.general--input{
+  margin-top: 5px;
+  color: white;
+  background-color: #2f5b79;
+  width: 50%;
+  border: none;
+  border-bottom: 3px solid black;
+  border-radius: 5px;
+}
+
+input:focus{
+  outline: none;
+}
+
+::placeholder{
+  color: white;
 }
