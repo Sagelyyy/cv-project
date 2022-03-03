@@ -24,49 +24,75 @@
 }
 
 body{
-    background-color: #637988;
+    background-color: #3071F2;
     font-family: 'Inter';
     font-weight: 400;
 }
 h4{
   margin: 0;
+  color: #135EF2;
+}
+
+h1{
+    color: #5E90F2;
 }
 
 .App{
     margin: 0;
 }
 
+.app--horizontal{
+  display: flex;
+  flex-direction: row;
+}
+
 hr{
   width: 100%;
-  border: 1px solid #2f5b79;
+  border: 1px solid #8DC3F2;
 }
 
-.personal--container, .general--container,
-.education--container, .experience--container{
-    font-family: 'Inter';
-    font-weight: 400;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    width: 400px;
-    padding: 5px;
+.subtitle--hr{
+  width: 25%;
+  margin-right: 75%;
 }
 
-.personal--title{
-  width: 50%;
+.subtitle{
+  margin: 0;
+  color: #4466aa;
 }
 
-.personal--container, .education--container, .experience--container{
-  margin-top: 10vh;
-  background-color: #97bad1;
-  border-radius: 15px;
+.title--container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.App--container{
+  font-family: 'Inter';
+  font-weight: 400;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 5px;
+  width: 400px;
+  height: fit-content;
+  background-color: #F2F2F2;
   box-shadow: 8px 10px 30px black;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  gap: 20px;
+  border-radius: 10px;
+}
+
+.general--container{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .personal--button, .education--button, .experience--button{
   width: 10%;
-  align-self: flex-end;
   background-color: transparent;
   border: none;
   border-bottom: 3px solid #2f5b79;
@@ -75,18 +101,19 @@ hr{
 
 .general--input{
   margin-top: 5px;
-  color: white;
-  background-color: #2f5b79;
+  color: black;
+  background-color: white;
   width: 50%;
   border: none;
-  border-bottom: 3px solid black;
+  border-bottom: 2px solid black;
   border-radius: 5px;
 }
 
 input:focus{
   outline: none;
+  border: 2px solid black;
 }
 
 ::placeholder{
-  color: white;
+  color: black;
 }

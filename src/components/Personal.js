@@ -9,8 +9,10 @@ class Personal extends React.Component {
         return (
 
             <div className="personal--container">
-                <button className="material-icons personal--button" value="1" onClick={this.props.onClick}>{this.props.editMode === "1" ? 'save' : 'edit'}</button>
+                <div className="title--container">
                 <h1 className="personal--title">Personal Info</h1>
+                <button className="material-icons personal--button" value="1" onClick={this.props.onClick}>{this.props.editMode === "1" ? 'save' : 'edit'}</button>
+                </div>
                 <hr></hr>
                 {this.props.editMode === "1" ?
                     <div className="general--container">

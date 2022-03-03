@@ -8,19 +8,19 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
+      firstName: 'John',
+      lastName: 'Doe',
+      email: 'johnny@jd.com',
+      phone: '123-456-7899',
       validPhone: false,
-      school: '',
-      studyTitle: '',
-      studyDate: '',
-      company: '',
-      position: '',
-      jobTasks: '',
-      jobStart: '',
-      jobEnd: '',
+      school: 'Omega Academy',
+      studyTitle: 'Awesome Degree',
+      studyDate: '2022-02-10',
+      company: 'Alpha Industries',
+      position: 'CEO',
+      jobTasks: 'Being Amazing',
+      jobStart: '2022-03-01',
+      jobEnd: '2022-03-02',
       editMode: "0"
     }
   }
@@ -60,15 +60,13 @@ class App extends React.Component {
         }
       })
     }
-
-    console.log(this.state.editMode)
-    console.log(this.state)
   }
 
   render() {
 
     return (
       <div className="App">
+        <div className='App--container'>
         <Personal
           editMode={this.state.editMode}
           onChange={this.handleInput}
@@ -97,6 +95,7 @@ class App extends React.Component {
           jobEnd={this.state.jobEnd}
           onClick={this.handleEdit}
         />
+        </div>
       </div>
     )
   }
