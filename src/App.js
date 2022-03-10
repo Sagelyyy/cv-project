@@ -3,11 +3,10 @@ import './App.css';
 import Personal from './components/Personal';
 import Education from './components/Education';
 import Experience from './components/Experience';
+import { render } from '@testing-library/react';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
+const App = () => {
+  const [userData, setUserData] = React.useState({
       firstName: 'John',
       lastName: 'Doe',
       email: 'johnny@jd.com',
@@ -22,38 +21,24 @@ class App extends React.Component {
       jobStart: '2022-03-01',
       jobEnd: '2022-03-02',
       editMode: "0"
-    }
-  }
+  })
 
-  handleInput = (event) => {
+  const handleInput = (event) => {
     const { name, value } = event.target
-    this.setState({ [name]: value })
-    console.log(this.state)
+    setUserData(old => ({ ...old, [name]: value }))
   }
 
-  handlePhone = (event) => {
-    const { name, value } = event.target
-    const regex = new RegExp(/^([+]?\d{1,2}[-\s]?|)\d{3}[-\s]?\d{3}[-\s]?\d{4}$/)
-    if (regex.test(value)) {
-      this.setState({ [name]: value })
-      this.setState(old => { return { ...old, validPhone: true } })
-    } else {
-      this.setState({ [name]: value })
-      this.setState(old => { return { ...old, validPhone: false } })
-    }
-  }
-
-  handleEdit = (event) => {
-    const { value } = event.target
-    if (this.state.editMode === "0") {
-      this.setState(old => {
+  const handleEdit = (event) => {
+        const { value } = event.target
+    if (userData.editMode === "0") {
+      setUserData(old => {
         return {
           ...old,
           editMode: value
         }
       })
-    } else if (this.state.editMode > 0) {
-      this.setState(old => {
+    } else if (userData.editMode > 0) {
+      setUserData(old => {
         return {
           ...old,
           editMode: "0"
@@ -62,43 +47,53 @@ class App extends React.Component {
     }
   }
 
-  render() {
+  const handlePhone = (event) => {
+        const { name, value } = event.target
+    const regex = new RegExp(/^([+]?\d{1,2}[-\s]?|)\d{3}[-\s]?\d{3}[-\s]?\d{4}$/)
+    if (regex.test(value)) {
+      setUserData(old => ({...old, [name]: value }))
+      setUserData(old => { return { ...old, validPhone: true } })
+    } else {
+      setUserData(old => ({...old, [name]: value }))
+      setUserData(old => { return { ...old, validPhone: false } })
+    }
+  }
 
-    return (
-      <div className="App">
+  return(
+          <div className="App">
         <div className='App--container'>
         <Personal
-          editMode={this.state.editMode}
-          onChange={this.handleInput}
-          firstName={this.state.firstName}
-          lastName={this.state.lastName}
-          phone={this.state.phone}
-          email={this.state.email}
-          onClick={this.handleEdit}
-          onPhone={this.handlePhone}
+          editMode={userData.editMode}
+          onChange={handleInput}
+          firstName={userData.firstName}
+          lastName={userData.lastName}
+          phone={userData.phone}
+          email={userData.email}
+          onClick={handleEdit}
+          onPhone={handlePhone}
         />
         <Education
-          editMode={this.state.editMode}
-          onChange={this.handleInput}
-          school={this.state.school}
-          studyTitle={this.state.studyTitle}
-          studyDate={this.state.studyDate}
-          onClick={this.handleEdit}
+          editMode={userData.editMode}
+          onChange={handleInput}
+          school={userData.school}
+          studyTitle={userData.studyTitle}
+          studyDate={userData.studyDate}
+          onClick={handleEdit}
         />
         <Experience
-          editMode={this.state.editMode}
-          onChange={this.handleInput}
-          company={this.state.company}
-          position={this.state.position}
-          jobTasks={this.state.jobTasks}
-          jobStart={this.state.jobStart}
-          jobEnd={this.state.jobEnd}
-          onClick={this.handleEdit}
+          editMode={userData.editMode}
+          onChange={handleInput}
+          company={userData.company}
+          position={userData.position}
+          jobTasks={userData.jobTasks}
+          jobStart={userData.jobStart}
+          jobEnd={userData.jobEnd}
+          onClick={handleEdit}
         />
         </div>
       </div>
-    )
-  }
+  )
+
 }
 
 export default App;
